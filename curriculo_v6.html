@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Araújo - Advogado</title>
+    <style>
+        @page {
+            margin: 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Garamond', 'Constantia', serif;
+            background: linear-gradient(to bottom, #0a1628 0%, #1a2332 50%, #2d3e50 100%);
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+        .resume-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            position: relative;
+        }
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .sidebar {
+            background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 60px 40px;
+        }
+        .profile-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .initials-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 3px solid rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .sidebar-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .sidebar-title {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+            font-style: italic;
+        }
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+        .sidebar-heading {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .contact-list {
+            list-style: none;
+        }
+        .contact-list li {
+            margin-bottom: 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        .contact-list strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 11px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .skill-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 3px solid rgba(255,255,255,0.4);
+        }
+        .skill-item h4 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .skill-item p {
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        .main-content {
+            padding: 60px 50px;
+            background: white;
+        }
+        .header-main {
+            margin-bottom: 50px;
+        }
+        .main-name {
+            font-size: 48px;
+            color: #1e3a8a;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .main-profession {
+            font-size: 24px;
+            color: #3b82f6;
+            font-weight: 300;
+            font-style: italic;
+        }
+        .content-section {
+            margin-bottom: 45px;
+        }
+        .content-heading {
+            color: #1e3a8a;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e7ff;
+            position: relative;
+        }
+        .content-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: #3b82f6;
+        }
+        .objective-content {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #3b82f6;
+            color: #1e293b;
+            font-size: 16px;
+            line-height: 1.9;
+            text-align: justify;
+            font-style: italic;
+        }
+        .experience-block {
+            margin-bottom: 35px;
+            padding: 30px;
+            background: #fafbfc;
+            border-radius: 10px;
+            border: 1px solid #e0e7ff;
+        }
+        .position-title {
+            color: #1e3a8a;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .position-description {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 15px;
+            text-align: justify;
+        }
+        .position-description ul {
+            margin-top: 15px;
+            margin-left: 25px;
+        }
+        .position-description li {
+            margin-bottom: 12px;
+        }
+        .education-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+        }
+        .education-box {
+            padding: 30px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+        }
+        .degree-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .degree-info {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="foto2.png" alt="circle lucas terno">
+                <div class="sidebar-name">LUCAS ARAÚJO</div>
+                <div class="sidebar-title">Advogado</div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">Contato</h3>
+                <ul class="contact-list">
+                    <li>
+                        <strong>Nascimento</strong>
+                        17/06/1991<br>(34 anos)
+                    </li>
+                    <li>
+                        <strong>Telefone</strong>
+                        82 99309 5416
+                    </li>
+                    <li>
+                        <strong>E-mail</strong>
+                        luksgabriel@gmail.com
+                    </li>
+                    <li>
+                        <strong>Endereço</strong>
+                        R Hilda de Pereira Monte, 11<br>
+                        Petrópolis, Maceió/AL<br>
+                        CEP 57062-585
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-heading">Competências</h3>
+                
+                <div class="skill-item">
+                    <h4>Liderança</h4>
+                    <p>Visão de trabalho em grupo, iniciativa proativa, paciência e carisma.</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Comunicação</h4>
+                    <p>Oratória, inglês avançado, atendimento humanizado, sustentações orais.</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Tecnologia</h4>
+                    <p>Microsoft Office, LibreOffice, E-SAJ, Audora e PJE.</p>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="content-section">
+                <h2 class="content-heading">Objetivos Profissionais</h2>
+                <div class="objective-content">
+                    Advogado comprometido com a defesa dos direitos de seus clientes, unindo experiência prática e sólido conhecimento teórico para oferecer soluções jurídicas eficientes. Atuo com transparência, ética e dedicação em cada caso, buscando ser reconhecido pela atuação estratégica nas áreas criminal, cível e de família. Priorizo sempre o bom relacionamento entre as pessoas, construindo um ambiente de confiança, respeito e cooperação.
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="content-heading">Experiência Profissional</h2>
+                
+                <div class="experience-block">
+                    <h3 class="position-title">ADVOGADO - Advocacia Privativa</h3>
+                    <div class="position-description">
+                        Experiência profissional na Advocacia: Cível e Criminal, com forte atuação em causas de Direito de Família, Direito do Consumidor, Violência Doméstica, Crimes de Trânsito, entre outras. Iniciando a atuação em 2016 até os dias atuais.
+                        <ul>
+                            <li>Advocacia Cível, Criminal e Trabalhista, especialmente advocacia Cível em parceria com o escritório Modesto e Costa em Alagoas e advogado correspondente de escritórios como Nelson Wilians, Lima e Falcão, LBCA, entre outros, atuando na capital e no interior do estado. Início em março de 2018 até 2020.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-block">
+                    <h3 class="position-title">ADVOGADO - Advocacia Pública</h3>
+                    <div class="position-description">
+                        <ul>
+                            <li>Advocacia no Direito de Família, Direito da criança e adolescente no Núcleo da Defensoria Pública do Estado de Alagoas do CRAD, realizando atendimento e consultoria jurídica às famílias de crianças em situação de vulnerabilidade, atuando em defesa dos direitos da criança e adolescente, judicializando pedidos de guarda e de alimentos, análises e consultas processuais para melhor orientar os assistidos, além de referenciar e direcionar as demandas incompatíveis com o CRAD para os Defensores públicos ou órgãos competentes. Início em Outubro de 2021 até junho de 2025.</li>
+                            <li>Acompanhamento ativo de demandas recebidas via denúncia anônima no CRAD, requerendo resolutividade e feedback aos conselheiros tutelares responsáveis. Início dezembro de 2022 até os dias atuais.</li>
+                            <li>Palestras e oficinas elaboradas e ministradas sobre o direito da criança e o Sistema de Garantia de Direitos e a lei 13431/2017 para capacitação da rede de proteção à criança e adolescente de todo o Estado de Alagoas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="content-heading">Formação Acadêmica</h2>
+                <div class="education-section">
+                    <div class="education-box">
+                        <h3 class="degree-name">BACHAREL EM DIREITO</h3>
+                        <div class="degree-info">
+                            FAMA, Maceió (conclusão 2014)<br><br>
+			<h3 class="degree-name">PÓS-GRADUAÇÃO LATU SENSU<br>CIÊNCIAS CRIMINAIS</h3>
+                        <div class="degree-info">
+                            FDG, Maceió (conclusão 2019)
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
