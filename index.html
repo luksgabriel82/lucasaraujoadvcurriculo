@@ -62,15 +62,6 @@
             font-weight: 700;
             letter-spacing: 2px;
         }
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            object-fit: cover;
-            border: 3px solid rgba(255,255,255,0.3);
-            display: block;
-        }
         .sidebar-name {
             font-size: 28px;
             font-weight: 700;
@@ -235,8 +226,7 @@
     <div class="resume-container">
         <aside class="sidebar">
             <div class="profile-section">
-                <img src="data:image/png;base64,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
-" class="profile-image" alt="circle lucas terno">
+                <img src="foto2.png" alt="circle lucas terno">
                 <div class="sidebar-name">LUCAS ARAÚJO</div>
                 <div class="sidebar-title">Advogado</div>
             </div>
@@ -289,7 +279,7 @@
             <div class="content-section">
                 <h2 class="content-heading">Objetivos Profissionais</h2>
                 <div class="objective-content">
-                    Advogado comprometido com a defesa dos direitos de seus clientes, unindo experiência prática e sólido conhecimento teórico para oferecer soluções jurídicas eficientes. [...]
+                    Advogado comprometido com a defesa dos direitos de seus clientes, unindo experiência prática e sólido conhecimento teórico para oferecer soluções jurídicas eficientes. Atuo com transparência, ética e dedicação em cada caso, buscando ser reconhecido pela atuação estratégica nas áreas criminal, cível e de família. Priorizo sempre o bom relacionamento entre as pessoas, construindo um ambiente de confiança, respeito e cooperação.
                 </div>
             </div>
             
@@ -299,9 +289,9 @@
                 <div class="experience-block">
                     <h3 class="position-title">ADVOGADO - Advocacia Privativa</h3>
                     <div class="position-description">
-                        Experiência profissional na Advocacia: Cível e Criminal, com forte atuação em causas de Direito de Família, Direito do Consumidor, Violência Doméstica, Crimes de Tr[...]
+                        Experiência profissional na Advocacia: Cível e Criminal, com forte atuação em causas de Direito de Família, Direito do Consumidor, Violência Doméstica, Crimes de Trânsito, entre outras. Iniciando a atuação em 2016 até os dias atuais.
                         <ul>
-                            <li>Advocacia Cível, Criminal e Trabalhista, especialmente advocacia Cível em parceria com o escritório Modesto e Costa em Alagoas e advogado correspondente de escr[...]</li>
+                            <li>Advocacia Cível, Criminal e Trabalhista, especialmente advocacia Cível em parceria com o escritório Modesto e Costa em Alagoas e advogado correspondente de escritórios como Nelson Wilians, Lima e Falcão, LBCA, entre outros, atuando na capital e no interior do estado. Início em março de 2018 até 2020.</li>
                         </ul>
                     </div>
                 </div>
@@ -310,9 +300,9 @@
                     <h3 class="position-title">ADVOGADO - Advocacia a Serviço do Estado de Alagoas</h3>
                     <div class="position-description">
                         <ul>
-                            <li>Advocacia no Direito de Família, Direito da criança e adolescente no Núcleo da Defensoria Pública do Estado de Alagoas do CRAD, realizando atendimento e consul[...]</li>
-                            <li>Acompanhamento ativo de demandas recebidas via denúncia anônima no CRAD, requerendo resolutividade e feedback aos conselheiros tutelares responsáveis. Início d[...]</li>
-                            <li>Palestras e oficinas elaboradas e ministradas sobre o direito da criança e o Sistema de Garantia de Direitos e a lei 13431/2017 para capacitação da rede de prot[...]</li>
+                            <li>Advocacia no Direito de Família, Direito da criança e adolescente no Núcleo da Defensoria Pública do Estado de Alagoas do CRAD, realizando atendimento e consultoria jurídica às famílias de crianças em situação de vulnerabilidade, atuando em defesa dos direitos da criança e adolescente, judicializando pedidos de guarda e de alimentos, análises e consultas processuais para melhor orientar os assistidos, além de referenciar e direcionar as demandas incompatíveis com o CRAD para os Defensores públicos ou órgãos competentes. Início em Outubro de 2021 até junho de 2025.</li>
+                            <li>Acompanhamento ativo de demandas recebidas via denúncia anônima no CRAD, requerendo resolutividade e feedback aos conselheiros tutelares responsáveis. Início dezembro de 2022 até os dias atuais.</li>
+                            <li>Palestras e oficinas elaboradas e ministradas sobre o direito da criança e o Sistema de Garantia de Direitos e a lei 13431/2017 para capacitação da rede de proteção à criança e adolescente de todo o Estado de Alagoas.</li>
                         </ul>
                     </div>
                 </div>
@@ -325,10 +315,10 @@
                         <h3 class="degree-name">BACHAREL EM DIREITO</h3>
                         <div class="degree-info">
                             FAMA, Maceió (conclusão 2014)<br><br>
-                            <h3 class="degree-name">PÓS-GRADUAÇÃO LATU SENSU<br>CIÊNCIAS CRIMINAIS</h3>
-                        </div>
+			<h3 class="degree-name">PÓS-GRADUAÇÃO LATU SENSU<br>CIÊNCIAS CRIMINAIS</h3>
                         <div class="degree-info">
                             FDG, Maceió (conclusão 2019)
+
                         </div>
                     </div>
                 </div>
